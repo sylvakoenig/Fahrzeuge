@@ -3,22 +3,19 @@ package main;
 import java.util.ArrayList;
 import java.util.List;
 
-import fahrzeuge.Auto;
+import fahrzeuge.Fabrik;
 import fahrzeuge.Fahrzeug;
-import fahrzeuge.Motorrad;
+import fahrzeuge.FahrzeugTyp;
 
 public class TaskMain {
 
 	public static void main(String[] args) {
 
-		Auto meinAuto = new Auto( 4, "blau", "Honda");
-		Auto lukasAuto = new Auto(5, "schwarz", "Mercedes");
-		Motorrad lukasMoped = new Motorrad("grau", "Kawasaki", false);
-		System.out.println(meinAuto);
-		meinAuto.setFarbe("rot");
-		System.out.println(meinAuto);
-		System.out.println(lukasAuto);
-		System.out.println(lukasMoped);
+		Fabrik fabrik = new Fabrik();
+		Fahrzeug lukasAuto = fabrik.createFahrzeug(FahrzeugTyp.AUTO, 5, "schwarz", "Mercedes");
+		Fahrzeug meinAuto = fabrik.createFahrzeug(FahrzeugTyp.AUTO, 5, "rot", "Opel");
+		Fahrzeug lukasMoped = fabrik.createFahrzeug(FahrzeugTyp.MOTORRAD, 5, "schwarz", "BMW");
+
 		
 		List<Fahrzeug> fahrzeuge = new ArrayList<>();
 		fahrzeuge.add(lukasAuto);
@@ -28,9 +25,6 @@ public class TaskMain {
 		for (Fahrzeug auto: fahrzeuge){
 			System.out.println(auto);
 		}
-		
-		
-		
 		
 		
 		
