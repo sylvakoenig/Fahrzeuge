@@ -1,44 +1,14 @@
 package fahrzeuge;
 
-public class Motorrad {
+public class Motorrad extends Fahrzeug {
 
-	private Integer raeder;
-	private String farbe;
-	private String marke;
 	private Boolean hatGepaecktraeger;
 
-
-	public Motorrad(Integer raeder, String farbe, String marke, Boolean hatGepaecktraeger) {
-		super();
-		this.raeder = raeder;
-		this.farbe = farbe;
-		this.marke = marke;
+	public Motorrad(String farbe, String marke, Boolean hatGepaecktraeger) {
+		super(2, farbe, marke);
 		this.hatGepaecktraeger = hatGepaecktraeger;
 	}
 
-	public Integer getRaeder() {
-		return raeder;
-	}
-
-	public void setRaeder(Integer raeder) {
-		this.raeder = raeder;
-	}
-
-	public String getFarbe() {
-		return farbe;
-	}
-
-	public void setFarbe(String farbe) {
-		this.farbe = farbe;
-	}
-
-	public String getMarke() {
-		return marke;
-	}
-
-	public void setMarke(String marke) {
-		this.marke = marke;
-	}
 	
 	public Boolean getHatGepaecktraeger() {
 		return hatGepaecktraeger;
