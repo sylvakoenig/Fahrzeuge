@@ -1,5 +1,5 @@
 package fahrzeuge;
 
 public enum FahrzeugTyp {
- AUTO, MOTORRAD;
+ AUTO, MOTORRAD, FAHRRAD;
 }

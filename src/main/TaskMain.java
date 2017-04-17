@@ -24,10 +24,7 @@ public class TaskMain {
 		
 		for (Fahrzeug auto: fahrzeuge){
 			System.out.println(auto);
-		}
-		
-		
-		
+		}		
 		
 	}
 
