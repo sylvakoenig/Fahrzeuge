@@ -4,11 +4,11 @@ public class Auto extends Fahrzeug {
 
 	private Integer tueren;
 
-	public Auto(Integer tueren, String farbe, String marke) {
+	public Auto(Integer tueren, FahrzeugFarben farbe, FahrzeugMarke marke) {
 		super(4, farbe, marke);
 		this.tueren = tueren;
 	}
-	
+
 	public String toString() {
 		return "Dein Auto ist ein " + marke + ", hat " + raeder + " Räder, " + tueren + " Türen und ist " + farbe + ".";
 	}

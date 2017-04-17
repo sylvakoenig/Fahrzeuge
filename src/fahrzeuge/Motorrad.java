@@ -4,7 +4,7 @@ public class Motorrad extends Fahrzeug {
 
 	private Boolean hatGepaecktraeger;
 
-	public Motorrad(String farbe, String marke, Boolean hatGepaecktraeger) {
+	public Motorrad(FahrzeugFarben farbe, FahrzeugMarke marke, Boolean hatGepaecktraeger){
 		super(2, farbe, marke);
 		this.hatGepaecktraeger = hatGepaecktraeger;
 	}

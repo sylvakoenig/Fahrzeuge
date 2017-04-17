@@ -4,14 +4,14 @@ public class Fahrzeug {
 
 	protected Integer raeder; // sichtbar für diese Klasse und alle die von
 								// dieser Klasse erben
-	protected String farbe;
-	protected String marke;
+	protected FahrzeugFarben farbe;
+	protected FahrzeugMarke marke;
 
-	public Fahrzeug(Integer raeder, String farbe, String marke) {
+	public Fahrzeug(Integer raeder, FahrzeugFarben farbe2, FahrzeugMarke marke2) {
 		super();
 		this.raeder = raeder;
-		this.farbe = farbe;
-		this.marke = marke;
+		this.farbe = farbe2;
+		this.marke = marke2;
 	}
 
 	public Integer getRaeder() {
@@ -22,19 +22,19 @@ public class Fahrzeug {
 		this.raeder = raeder;
 	}
 
-	public String getFarbe() {
+	public FahrzeugFarben getFarbe() {
 		return farbe;
 	}
 
-	public void setFarbe(String farbe) {
+	public void setFarbe(FahrzeugFarben farbe) {
 		this.farbe = farbe;
 	}
 
-	public String getMarke() {
+	public FahrzeugMarke getMarke() {
 		return marke;
 	}
 
-	public void setMarke(String marke) {
+	public void setMarke(FahrzeugMarke marke) {
 		this.marke = marke;
 	}
 
