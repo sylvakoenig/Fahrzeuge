@@ -3,10 +3,20 @@ package fahrzeuge;
 public class Motorrad extends Fahrzeug {
 
 	private Boolean hatGepaecktraeger;
+	private Boolean hatPedale;
+	private MotorradMarke marke;
 
 	public Motorrad(FahrzeugFarben farbe, FahrzeugMarke marke, Boolean hatGepaecktraeger){
 		super(2, farbe, marke);
 		this.hatGepaecktraeger = hatGepaecktraeger;
+		this.setHatPedale(false);
+	}
+	
+	public Motorrad(FahrzeugFarben farbe, MotorradMarke marke, Boolean hatGepaecktraeger){
+		super(2, farbe);
+		this.hatGepaecktraeger = hatGepaecktraeger;
+		this.setHatPedale(false);
+		this.marke = marke;
 	}
 
 	
@@ -20,8 +30,18 @@ public class Motorrad extends Fahrzeug {
 
 	@Override
 	public String toString() {
-		return "Motorrad [raeder=" + raeder + ", farbe=" + farbe + ", marke=" + marke + ", hatGepaecktraeger="
-				+ hatGepaecktraeger + "]";
+		return "Dein Motorrad ist ein " + marke + " mit "  + raeder + " Raedern, es ist " + farbe + "und hatGepaecktraeger="
+				+ hatGepaecktraeger + ".";
+	}
+
+
+	public Boolean getHatPedale() {
+		return hatPedale;
+	}
+
+
+	public void setHatPedale(Boolean hatPedale) {
+		this.hatPedale = hatPedale;
 	}
 	
 	

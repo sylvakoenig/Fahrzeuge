@@ -4,12 +4,21 @@ public class Fahrrad extends Fahrzeug {
 
 	private Boolean hatGepaecktraeger;
 	private Boolean hatPedale;
+	private FahrradMarke marke;
 
-	public Fahrrad(FahrzeugFarben farbe, FahrzeugMarke marke, Boolean hatGepaecktraeger, Boolean hatPedale) {
+	public Fahrrad(FahrzeugFarben farbe, FahrradMarke marke, Boolean hatGepaecktraeger) {
+		super(2, farbe);
+		this.hatGepaecktraeger = hatGepaecktraeger;
+		this.hatPedale = true;
+		this.marke = marke;
+	}
+	
+	public Fahrrad(FahrzeugFarben farbe, FahrzeugMarke marke, Boolean hatGepaecktraeger) {
 		super(2, farbe, marke);
 		this.hatGepaecktraeger = hatGepaecktraeger;
-		this.hatPedale = hatPedale;
+		this.hatPedale = true;
 	}
+	
 
 	public Boolean getHatPedale() {
 		return hatPedale;
@@ -17,8 +26,7 @@ public class Fahrrad extends Fahrzeug {
 
 	@Override
 	public String toString() {
-		return "Fahrrad [hatGepaecktraeger=" + hatGepaecktraeger + ", hatPedale=" + hatPedale + ", raeder=" + raeder
-				+ ", farbe=" + farbe + ", marke=" + marke + "]";
+		return "Dein Fahrrad ist ein " + marke + " mit " + raeder + " Raedern, es ist " + farbe + " und hatGepaecktraeger=" + hatGepaecktraeger + ", hatPedale=" + hatPedale;
 	}
 
 	public void setHatPedale(Boolean hatPedale) {

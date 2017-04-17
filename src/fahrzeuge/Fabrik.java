@@ -12,9 +12,31 @@ public class Fabrik {
 			return new Motorrad(farbe, marke, false);
 		}
 		else {
-			return new Fahrrad(farbe, marke, true, true);
+			return new Fahrrad(farbe, marke, true);
 		}
 	}
+
+	public Fahrzeug createFahrzeug(FahrzeugTyp typ, Integer tueren, FahrzeugFarben farbe){
+		if (typ == FahrzeugTyp.AUTO){
+			 Random randomGenerator = new Random();
+			 int randomInt = randomGenerator.nextInt(FahrzeugMarke.values().length);
+			 FahrzeugMarke zufallsMarke = FahrzeugMarke.values()[randomInt];
+			return new Auto(tueren, farbe, zufallsMarke);
+		}
+		else if (typ == FahrzeugTyp.MOTORRAD){
+			 Random randomGenerator = new Random();
+			 int randomInt = randomGenerator.nextInt(MotorradMarke.values().length);
+			 MotorradMarke zufallsMarke = MotorradMarke.values()[randomInt];
+			 return new Motorrad(farbe, zufallsMarke, false);
+		}
+		else {
+			 Random randomGenerator = new Random();
+			 int randomInt = randomGenerator.nextInt(FahrradMarke.values().length);
+			 FahrradMarke zufallsMarke = FahrradMarke.values()[randomInt];
+			 return new Fahrrad(farbe, zufallsMarke, true);
+		}
+	}
+	
 	
 	public Fahrzeug createZufallsFahrzeug(){
 		 Random randomGenerator = new Random();
@@ -26,11 +48,9 @@ public class Fabrik {
 		 FahrzeugFarben zufallsFarbe;
 		 zufallsFarbe = FahrzeugFarben.values()[randomInt];
 				
-		 randomInt = randomGenerator.nextInt(FahrzeugMarke.values().length);
-		 FahrzeugMarke zufallsMarke;
-		 zufallsMarke = FahrzeugMarke.values()[randomInt];
+
 		 
-		 return createFahrzeug(zufallsTyp, 2, zufallsFarbe, zufallsMarke);
+		 return createFahrzeug(zufallsTyp, 2, zufallsFarbe);
 	}
 	
 }

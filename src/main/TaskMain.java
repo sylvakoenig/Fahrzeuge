@@ -14,8 +14,7 @@ public class TaskMain {
 		List<Fahrzeug> zufallsFabrik = new ArrayList<>();
 
 		for (int i = 1; i <= 10; i++) {
-			Fahrzeug neuesFahrzeug = fabrik.createZufallsFahrzeug();
-			zufallsFabrik.add(neuesFahrzeug);
+			zufallsFabrik.add(fabrik.createZufallsFahrzeug());
 		}
 		
 		for (Fahrzeug auto : zufallsFabrik) {

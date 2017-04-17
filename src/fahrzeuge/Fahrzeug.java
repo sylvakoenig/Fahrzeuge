@@ -14,6 +14,12 @@ public class Fahrzeug {
 		this.marke = marke2;
 	}
 
+	public Fahrzeug(Integer raeder, FahrzeugFarben farbe2) {
+		super();
+		this.raeder = raeder;
+		this.farbe = farbe2;
+	}
+
 	public Integer getRaeder() {
 		return raeder;
 	}
