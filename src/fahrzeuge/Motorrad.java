@@ -30,7 +30,7 @@ public class Motorrad extends Fahrzeug {
 
 	@Override
 	public String toString() {
-		return "Dein Motorrad ist ein " + marke + " mit "  + raeder + " Raedern, es ist " + farbe + "und hatGepaecktraeger="
+		return "Dein Motorrad ist ein " + marke + " mit "  + raeder + " Raedern, es ist " + farbe + " und hatGepaecktraeger="
 				+ hatGepaecktraeger + ".";
 	}
 
