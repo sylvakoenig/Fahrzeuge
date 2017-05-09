@@ -1,23 +1,26 @@
 package fahrzeuge;
 
+import marke.AutoMarke;
+import marke.Marke;
+
 public class Fahrzeug {
 
 	protected Integer raeder; // sichtbar für diese Klasse und alle die von
 								// dieser Klasse erben
 	protected FahrzeugFarben farbe;
-	protected FahrzeugMarke marke;
+	protected Marke marke;
 
-	public Fahrzeug(Integer raeder, FahrzeugFarben farbe2, FahrzeugMarke marke2) {
+	public Fahrzeug(Integer raeder, FahrzeugFarben farbe, Marke marke) {
 		super();
 		this.raeder = raeder;
-		this.farbe = farbe2;
-		this.marke = marke2;
+		this.farbe = farbe;
+		this.marke = marke;
 	}
 
-	public Fahrzeug(Integer raeder, FahrzeugFarben farbe2) {
+	public Fahrzeug(Integer raeder, FahrzeugFarben farbe) {
 		super();
 		this.raeder = raeder;
-		this.farbe = farbe2;
+		this.farbe = farbe;
 	}
 
 	public Integer getRaeder() {
@@ -36,11 +39,11 @@ public class Fahrzeug {
 		this.farbe = farbe;
 	}
 
-	public FahrzeugMarke getMarke() {
+	public Marke getMarke() {
 		return marke;
 	}
 
-	public void setMarke(FahrzeugMarke marke) {
+	public void setMarke(Marke marke) {
 		this.marke = marke;
 	}
 

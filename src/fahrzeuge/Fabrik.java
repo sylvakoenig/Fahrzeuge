@@ -1,8 +1,6 @@
 package fahrzeuge;
 
 import java.util.HashMap;
-import java.util.Random;
-
 import fahrzeuge.FahrzeugParameter.ParameterTyp;
 
 public abstract class Fabrik {
@@ -15,13 +13,12 @@ public abstract class Fabrik {
 		if (typ == FahrzeugTyp.AUTO){
 			return new AutoFabrik();
 		}
-		return null;
-//		else if (typ == FahrzeugTyp.MOTORRAD){
-//			return new Motorrad(farbe, marke, false);
-//		}
-//		else {
-//			return new Fahrrad(farbe, marke, true);
-//		}
+		else if (typ == FahrzeugTyp.MOTORRAD){
+			return new MotorradFabrik();
+		}
+		else {
+			return new FahrradFabrik();
+		}
 	}
 
 	public abstract Fahrzeug createFahrzeug();	
@@ -31,6 +28,5 @@ public abstract class Fabrik {
 	public void addParameter(FahrzeugParameter parameter){
 		parameters.put(parameter.getTyp(), parameter);
 	}
-	
-	
+
 }

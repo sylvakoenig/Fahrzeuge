@@ -1,11 +1,29 @@
 package fahrzeuge;
 
+import marke.AutoMarke;
+import marke.FahrradMarke;
+import marke.Marke;
+import marke.MotorradMarke;
+
 public class FahrzeugParameter {
 	private Integer tueren;
 	private Integer raeder;
-	private FahrzeugMarke marke;
+	public Marke getMarke() {
+		return marke;
+	}
+
+	public void setMarke(Marke marke) {
+		this.marke = marke;
+	}
+
+	public void setRaeder(Integer raeder) {
+		this.raeder = raeder;
+	}
+
+	private Marke marke;
 	private FahrzeugFarben farbe;
 	private ParameterTyp typ;
+	private Boolean hatGepaecktrager;
 	
 	private FahrzeugParameter() {
 		super();
@@ -19,15 +37,6 @@ public class FahrzeugParameter {
 	}
 	public Integer getRaeder() {
 		return raeder;
-	}
-	private void setRaeder(Integer raeder) {
-		this.raeder = raeder;
-	}
-	public FahrzeugMarke getMarke() {
-		return marke;
-	}
-	private void setMarke(FahrzeugMarke marke) {
-		this.marke = marke;
 	}
 	public FahrzeugFarben getFarbe() {
 		return farbe;
@@ -45,15 +54,21 @@ public class FahrzeugParameter {
 		this.typ = typ;
 	}
 
+	public Boolean getHatGepaecktrager() {
+		return hatGepaecktrager;
+	}
+
+	public void setHatGepaecktrager(Boolean hatGepaecktrager) {
+		this.hatGepaecktrager = hatGepaecktrager;
+	}
 
 	public enum ParameterTyp{
-		tueren, raeder, marke, farbe;
+		tueren, raeder, farbe, hatGepaecktraeger, Marke;
 	}
-	
-	
-	public static FahrzeugParameter createMarkeParameter(FahrzeugMarke marke){
+
+	public static FahrzeugParameter createMarkeParameter(Marke marke){
 		FahrzeugParameter parameter = new FahrzeugParameter();
-		parameter.setTyp(ParameterTyp.marke);
+		parameter.setTyp(ParameterTyp.Marke);
 		parameter.setMarke(marke);
 		return parameter;
 	}
@@ -70,5 +85,13 @@ public class FahrzeugParameter {
 		parameter.setTyp(ParameterTyp.tueren);
 		parameter.setTueren(tueren);
 		return parameter;
-	}	
+	}
+
+	public static FahrzeugParameter createGepaeckParameter(boolean hatGepaecktraeger) {
+		FahrzeugParameter parameter = new FahrzeugParameter();
+		parameter.setTyp(ParameterTyp.hatGepaecktraeger);
+		parameter.setHatGepaecktrager(hatGepaecktraeger);
+		return parameter;
+	}
+	
 }

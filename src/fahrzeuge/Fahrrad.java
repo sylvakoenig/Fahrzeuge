@@ -1,19 +1,22 @@
 package fahrzeuge;
 
+import marke.AutoMarke;
+import marke.Marke;
+
 public class Fahrrad extends Fahrzeug {
 
 	private Boolean hatGepaecktraeger;
 	private Boolean hatPedale;
-	private FahrradMarke marke;
+	private Marke marke;
 
-	public Fahrrad(FahrzeugFarben farbe, FahrradMarke marke, Boolean hatGepaecktraeger) {
+	public Fahrrad(FahrzeugFarben farbe, Marke marke, Boolean hatGepaecktraeger) {
 		super(2, farbe);
 		this.hatGepaecktraeger = hatGepaecktraeger;
 		this.hatPedale = true;
 		this.marke = marke;
 	}
 	
-	public Fahrrad(FahrzeugFarben farbe, FahrzeugMarke marke, Boolean hatGepaecktraeger) {
+	public Fahrrad(FahrzeugFarben farbe, AutoMarke marke, Boolean hatGepaecktraeger) {
 		super(2, farbe, marke);
 		this.hatGepaecktraeger = hatGepaecktraeger;
 		this.hatPedale = true;
@@ -26,7 +29,7 @@ public class Fahrrad extends Fahrzeug {
 
 	@Override
 	public String toString() {
-		return "Dein Fahrrad ist ein " + marke + " mit " + raeder + " Raedern, es ist " + farbe + " und hatGepaecktraeger=" + hatGepaecktraeger + ", hatPedale=" + hatPedale;
+		return "Dein Fahrrad ist ein " + marke + " mit " + raeder + " Raedern, es ist " + farbe + " und hatGepaecktraeger=" + hatGepaecktraeger + ", hatPedale=" + hatPedale + ".";
 	}
 
 	public void setHatPedale(Boolean hatPedale) {

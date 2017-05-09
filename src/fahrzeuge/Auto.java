@@ -1,10 +1,13 @@
 package fahrzeuge;
 
+import marke.AutoMarke;
+import marke.Marke;
+
 public class Auto extends Fahrzeug {
 
 	private Integer tueren;
 
-	public Auto(Integer tueren, FahrzeugFarben farbe, FahrzeugMarke marke) {
+	public Auto(Integer tueren, FahrzeugFarben farbe, Marke marke) {
 		super(4, farbe, marke);
 		this.tueren = tueren;
 	}

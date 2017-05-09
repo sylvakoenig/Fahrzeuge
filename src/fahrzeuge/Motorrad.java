@@ -1,12 +1,15 @@
 package fahrzeuge;
 
+import marke.Marke;
+import marke.MotorradMarke;
+
 public class Motorrad extends Fahrzeug {
 
 	private Boolean hatGepaecktraeger;
 	private Boolean hatPedale;
 	private MotorradMarke marke;
 
-	public Motorrad(FahrzeugFarben farbe, FahrzeugMarke marke, Boolean hatGepaecktraeger){
+	public Motorrad(FahrzeugFarben farbe, Marke marke, Boolean hatGepaecktraeger){
 		super(2, farbe, marke);
 		this.hatGepaecktraeger = hatGepaecktraeger;
 		this.setHatPedale(false);
