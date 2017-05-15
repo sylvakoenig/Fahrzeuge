@@ -1,5 +1,9 @@
-package fahrzeuge;
+package fabrik;
 
+import eigenschaften.FahrzeugFarben;
+import eigenschaften.FahrzeugParameter;
+import fahrzeuge.Auto;
+import fahrzeuge.Fahrzeug;
 import marke.Marke;
 import marke.Marke.MarkeTyp;
 

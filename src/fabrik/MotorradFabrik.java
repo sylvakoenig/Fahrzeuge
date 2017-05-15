@@ -1,5 +1,9 @@
-package fahrzeuge;
+package fabrik;
 
+import eigenschaften.FahrzeugFarben;
+import eigenschaften.FahrzeugParameter;
+import fahrzeuge.Fahrzeug;
+import fahrzeuge.Motorrad;
 import marke.Marke;
 
 public class MotorradFabrik extends Fabrik {

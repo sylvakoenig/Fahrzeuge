@@ -1,7 +1,11 @@
-package fahrzeuge;
+package fabrik;
 
 import java.util.HashMap;
-import fahrzeuge.FahrzeugParameter.ParameterTyp;
+
+import eigenschaften.FahrzeugParameter;
+import eigenschaften.FahrzeugTyp;
+import eigenschaften.FahrzeugParameter.ParameterTyp;
+import fahrzeuge.Fahrzeug;
 
 public abstract class Fabrik {
 

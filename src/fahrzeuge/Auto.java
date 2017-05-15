@@ -1,6 +1,6 @@
 package fahrzeuge;
 
-import marke.AutoMarke;
+import eigenschaften.FahrzeugFarben;
 import marke.Marke;
 
 public class Auto extends Fahrzeug {

@@ -1,5 +1,6 @@
 package fahrzeuge;
 
+import eigenschaften.FahrzeugFarben;
 import marke.AutoMarke;
 import marke.Marke;
 
