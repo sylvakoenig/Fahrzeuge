@@ -2,10 +2,10 @@ package fabrik;
 
 import eigenschaften.FahrzeugFarben;
 import eigenschaften.FahrzeugParameter;
+import eigenschaften.marke.Marke;
+import eigenschaften.marke.Marke.MarkeTyp;
 import fahrzeuge.Auto;
 import fahrzeuge.Fahrzeug;
-import marke.Marke;
-import marke.Marke.MarkeTyp;
 
 public class AutoFabrik extends Fabrik {
 

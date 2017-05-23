@@ -1,4 +1,4 @@
-package marke;
+package eigenschaften.marke;
 
 public interface Marke {
 

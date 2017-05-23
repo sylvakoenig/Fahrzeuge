@@ -1,8 +1,9 @@
 package fahrzeuge;
 
 import eigenschaften.FahrzeugFarben;
-import marke.AutoMarke;
-import marke.Marke;
+import eigenschaften.FahrzeugTyp;
+import eigenschaften.marke.AutoMarke;
+import eigenschaften.marke.Marke;
 
 public class Fahrrad extends Fahrzeug {
 
@@ -43,6 +44,11 @@ public class Fahrrad extends Fahrzeug {
 
 	public void setHatGepaecktraeger(boolean hatGepaecktraeger) {
 		this.hatGepaecktraeger = hatGepaecktraeger;
+	}
+
+	@Override
+	public FahrzeugTyp getTyp() {
+		return FahrzeugTyp.FAHRRAD;
 	}
 
 }

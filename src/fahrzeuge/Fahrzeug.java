@@ -1,15 +1,18 @@
 package fahrzeuge;
 
 import eigenschaften.FahrzeugFarben;
-import marke.Marke;
+import eigenschaften.FahrzeugTyp;
+import eigenschaften.marke.Marke;
 
-public class Fahrzeug {
+public abstract class Fahrzeug {
 
 	protected Integer raeder; // sichtbar für diese Klasse und alle die von
 								// dieser Klasse erben
 	protected FahrzeugFarben farbe;
 	protected Marke marke;
 
+	public abstract FahrzeugTyp getTyp();
+	
 	public Fahrzeug(Integer raeder, FahrzeugFarben farbe, Marke marke) {
 		super();
 		this.raeder = raeder;

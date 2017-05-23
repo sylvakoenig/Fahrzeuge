@@ -1,4 +1,4 @@
-package marke;
+package eigenschaften.marke;
 
 public enum FahrradMarke implements Marke {
 	Trek, NSU, Diamant, Rose;

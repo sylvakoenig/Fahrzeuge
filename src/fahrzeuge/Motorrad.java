@@ -1,8 +1,9 @@
 package fahrzeuge;
 
 import eigenschaften.FahrzeugFarben;
-import marke.Marke;
-import marke.MotorradMarke;
+import eigenschaften.FahrzeugTyp;
+import eigenschaften.marke.Marke;
+import eigenschaften.marke.MotorradMarke;
 
 public class Motorrad extends Fahrzeug {
 
@@ -46,6 +47,11 @@ public class Motorrad extends Fahrzeug {
 
 	public void setHatPedale(Boolean hatPedale) {
 		this.hatPedale = hatPedale;
+	}
+
+	@Override
+	public FahrzeugTyp getTyp() {
+		return FahrzeugTyp.MOTORRAD;
 	}
 	
 	

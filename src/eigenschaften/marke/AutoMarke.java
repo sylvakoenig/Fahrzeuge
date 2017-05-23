@@ -1,4 +1,4 @@
-package marke;
+package eigenschaften.marke;
 
 public enum AutoMarke implements Marke {
 	BMW, Audi, Opel, Honda, Skoda;

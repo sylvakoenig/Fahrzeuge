@@ -1,6 +1,6 @@
 package eigenschaften;
 
-import marke.Marke;
+import eigenschaften.marke.Marke;
 
 public class FahrzeugParameter {
 	private Integer tueren;

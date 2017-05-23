@@ -1,7 +1,12 @@
 package person;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.function.Consumer;
 
+import eigenschaften.FahrzeugTyp;
 import fahrzeuge.Auto;
 import fahrzeuge.Fahrrad;
 import fahrzeuge.Fahrzeug;
@@ -19,42 +24,45 @@ public class Person {
 		this.hatFuehrerschein = hatFuehrerschein;
 	}
 
-	public ArrayList<Fahrzeug> getMeineFahrzeuge() {
-		return meineFahrzeuge;
-	}
-
-	public void setMeineFahrzeuge(ArrayList<Fahrzeug> meineFahrzeuge) {
-		this.meineFahrzeuge = meineFahrzeuge;
-	}
-
-	public void addFahrzeug(Fahrzeug neuesFahrzeug){
-		if (neuesFahrzeug instanceof Auto){
-			if (this.hatFuehrerschein){
-				this.meineFahrzeuge.add(neuesFahrzeug);
-			} else {
-				System.out.println("Die Person darf kein Auto bekommen, wenn sie keine Führerschein besitzt."); // oder das hier lieber als assert?? 
-			}
-		} else { // neuesFahrzeug ist kein Auto
-			this.meineFahrzeuge.add(neuesFahrzeug);	
+	public void addFahrzeug(Fahrzeug neuesFahrzeug) throws NoLicenseException {
+		if ((neuesFahrzeug instanceof Auto) && (!this.hatFuehrerschein)) {
+			throw new NoLicenseException();
 		}
-		
+		this.meineFahrzeuge.add(neuesFahrzeug);
 	}
-	
-	public String toString(){
-		Integer anzAuto = 0;
-		Integer anzFahrrad = 0;
-		Integer anzMotorrad = 0;
-		
-		for (int i=0; i < this.meineFahrzeuge.size(); i++){
-			if (this.meineFahrzeuge.get(i) instanceof Auto){
-				anzAuto ++;
-			} else if (this.meineFahrzeuge.get(i) instanceof Fahrrad){
-				anzFahrrad ++;
-			} else {
-				anzMotorrad ++;
-			}
-		}	
 
-		return "Du hast " + anzAuto + " Auto(s), " + anzFahrrad + " Fahrrad/Fahrräder und " + anzMotorrad + " Motorrad/Motorräder.";
+	public String toString() {
+
+		HashMap<FahrzeugTyp, Integer> fahrzeugMap = new HashMap<>();
+
+		Arrays.asList(FahrzeugTyp.values()).forEach(new Consumer<FahrzeugTyp>() {
+			@Override
+			public void accept(FahrzeugTyp t) {
+				fahrzeugMap.put(t, 0);
+			}
+		});
+
+		for (Fahrzeug fahrzeug : meineFahrzeuge) {
+			fahrzeugMap.put(fahrzeug.getTyp(), fahrzeugMap.get(fahrzeug.getTyp()) + 1);
+		}
+
+		StringBuilder result = new StringBuilder();
+
+		for (Entry<FahrzeugTyp, Integer> entry : fahrzeugMap.entrySet()) {
+			result.append(entry.getValue().toString());
+			result.append(" ");
+			result.append(entry.getKey().toString());
+			result.append(" ");
+		}
+		return result.toString();
 	}
+
+	public class NoLicenseException extends Exception {
+
+		public NoLicenseException() {
+			super("Die Person darf kein Auto bekommen, wenn sie keine Führerschein besitzt.");
+		}
+
+	}
+
 }
