@@ -1,0 +1,11 @@
+Git Repo anlegen
+Repo auf github anlegen
+
+abstrakte Klasse Operation
+	- abstrakte Methode evaluate:Integer
+
+Klasse Addition implementiert Operation
+	- 2 Integer als Konstruktor
+
+Klasse Differenz implementiert Operation
+	- 2 Integer als Konstruktor
